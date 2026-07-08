@@ -1,0 +1,53 @@
+---
+import Card from '../components/ui/Card.astro';
+---
+
+<section id="problemas" class="py-24 md:py-32 bg-bg-sec">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="max-w-[600px] mb-16 reveal">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-text-main mb-4" data-i18n-key="problems.title">
+        Los problemas que resolvemos
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+      
+      <!-- Card 1 -->
+      <Card hoverEffect class="reveal">
+        <div class="w-12 h-12 bg-error/10 text-error rounded-[14px] flex items-center justify-center mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-text-main mb-3" data-i18n-key="problems.item1.title">No tienes una web profesional</h3>
+        <p class="text-text-muted leading-relaxed" data-i18n-key="problems.item1.desc">Pierdes clientes que buscan en Google y terminan eligiendo a tu competencia porque su negocio parece más seguro.</p>
+      </Card>
+
+      <!-- Card 2 -->
+      <Card hoverEffect class="reveal" style="transition-delay: 100ms;">
+        <div class="w-12 h-12 bg-error/10 text-error rounded-[14px] flex items-center justify-center mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-text-main mb-3">Pierdes tiempo en tareas manuales</h3>
+        <p class="text-text-muted leading-relaxed">Pasas horas respondiendo los mismos mensajes de WhatsApp o gestionando reservas a mano.</p>
+      </Card>
+
+      <!-- Card 3 -->
+      <Card hoverEffect class="reveal">
+        <div class="w-12 h-12 bg-error/10 text-error rounded-[14px] flex items-center justify-center mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-text-main mb-3">Tus ventas están estancadas</h3>
+        <p class="text-text-muted leading-relaxed">Dependes únicamente del boca a boca. No tienes sistemas predecibles para atraer a clientes nuevos.</p>
+      </Card>
+
+      <!-- Card 4 -->
+      <Card hoverEffect class="reveal" style="transition-delay: 100ms;">
+        <div class="w-12 h-12 bg-error/10 text-error rounded-[14px] flex items-center justify-center mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-text-main mb-3">Tecnología desactualizada</h3>
+        <p class="text-text-muted leading-relaxed">Tienes sistemas lentos, difíciles de usar o que simplemente no se comunican entre sí.</p>
+      </Card>
+
+    </div>
+  </div>
+</section>

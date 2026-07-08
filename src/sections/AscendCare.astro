@@ -1,0 +1,93 @@
+---
+import Card from '../components/ui/Card.astro';
+import PrimaryButton from '../components/ui/PrimaryButton.astro';
+---
+
+<section class="py-24 md:py-32 bg-bg-sec">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="max-w-[800px] mx-auto text-center mb-20 reveal">
+      <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-text-main mb-6">Tranquilidad y Evolución</h2>
+      <p class="text-xl text-text-muted">La web no termina cuando se lanza. Ascend Care es tu equipo técnico bajo demanda para que tu negocio nunca se detenga.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 max-w-[1000px] mx-auto">
+      
+      <!-- Care -->
+      <Card hoverEffect class="p-8 reveal flex flex-col h-full">
+        <div class="flex items-start justify-between mb-6">
+          <div>
+            <h3 class="text-2xl font-bold text-text-main mb-2">Ascend Care</h3>
+            <p class="text-text-muted">Tranquilidad absoluta para tu negocio</p>
+          </div>
+          <div class="w-12 h-12 bg-primary/10 text-primary rounded-[14px] flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+        </div>
+        
+        <div class="mb-8">
+          <div class="flex items-baseline gap-1 mt-1">
+            <span class="text-4xl font-bold text-text-main" data-base-price="49">€49</span>
+            <span class="text-text-muted">/mes</span>
+          </div>
+        </div>
+        
+        <div class="flex-grow">
+          <ul class="space-y-4 mb-8">
+            <li class="flex gap-3 text-text-main text-sm">
+              <svg class="text-success w-5 h-5 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Hosting ultrarrápido incluido
+            </li>
+            <li class="flex gap-3 text-text-main text-sm">
+              <svg class="text-success w-5 h-5 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Resolución de incidencias prioritarias
+            </li>
+            <li class="flex gap-3 text-text-main text-sm">
+              <svg class="text-success w-5 h-5 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Copias de seguridad diarias
+            </li>
+          </ul>
+        </div>
+        <a href="#" data-lemon-checkout="ascend-care" class="w-full inline-flex items-center justify-center px-6 py-3 bg-bg-base text-text-main border border-border rounded-[14px] hover:bg-[#F3F4F6] transition-colors font-medium">Suscribirse</a>
+      </Card>
+
+      <!-- Growth Care -->
+      <Card hoverEffect class="p-8 reveal border-primary shadow-[0_12px_32px_rgba(37,99,235,0.1)] flex flex-col h-full" style="transition-delay: 100ms;">
+        <div class="flex items-start justify-between mb-6">
+          <div>
+            <h3 class="text-2xl font-bold text-text-main mb-2">Growth Care</h3>
+            <p class="text-text-muted">Evolución continua mensual</p>
+          </div>
+          <div class="w-12 h-12 bg-primary text-white rounded-[14px] flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+        </div>
+        
+        <div class="mb-8">
+          <div class="flex items-baseline gap-1 mt-1">
+            <span class="text-4xl font-bold text-text-main" data-base-price="149">€149</span>
+            <span class="text-text-muted">/mes</span>
+          </div>
+        </div>
+        
+        <div class="flex-grow">
+          <ul class="space-y-4 mb-8">
+            <li class="flex gap-3 text-text-main text-sm font-medium">
+              <svg class="text-primary w-5 h-5 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Todo lo de Ascend Care
+            </li>
+            <li class="flex gap-3 text-text-main text-sm">
+              <svg class="text-primary w-5 h-5 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              1 hora de desarrollo/cambios al mes
+            </li>
+            <li class="flex gap-3 text-text-main text-sm">
+              <svg class="text-primary w-5 h-5 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Reportes de analítica mensual
+            </li>
+          </ul>
+        </div>
+        <PrimaryButton href="#" data-lemon-checkout="growth-care" class="w-full">Suscribirse</PrimaryButton>
+      </Card>
+
+    </div>
+  </div>
+</section>

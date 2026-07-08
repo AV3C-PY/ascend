@@ -1,0 +1,130 @@
+---
+import Card from '../components/ui/Card.astro';
+import PrimaryButton from '../components/ui/PrimaryButton.astro';
+import SecondaryButton from '../components/ui/SecondaryButton.astro';
+import Badge from '../components/ui/Badge.astro';
+---
+
+<section id="planes" class="py-24 md:py-32 bg-bg-sec">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="max-w-[800px] mx-auto text-center mb-20 reveal">
+      <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-text-main mb-6" data-i18n-key="plans.title">
+        La transformación
+      </h2>
+      <p class="text-xl text-text-muted">Elige el nivel de digitalización que tu negocio necesita ahora. Escala después.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8 items-center">
+      
+      <!-- Start Plan -->
+      <Card hoverEffect class="reveal flex flex-col h-full">
+        <h3 class="text-2xl font-bold text-text-main mb-2" data-i18n-key="plans.start.title">Ascend Start</h3>
+        <p class="text-text-muted mb-6" data-i18n-key="plans.start.desc">La base sólida para tu presencia digital</p>
+        <div class="mb-8">
+          <span class="text-sm font-medium text-text-muted">Desde</span>
+          <div class="flex items-baseline gap-1 mt-1">
+            <span class="text-4xl font-bold text-text-main" data-base-price="990">€990</span>
+          </div>
+        </div>
+        
+        <div class="flex-grow">
+          <ul class="space-y-4 mb-8">
+            <li class="flex gap-3 text-text-main">
+              <svg class="text-success w-5 h-5 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Web corporativa (hasta 5 páginas)
+            </li>
+            <li class="flex gap-3 text-text-main">
+              <svg class="text-success w-5 h-5 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Diseño Premium responsive
+            </li>
+            <li class="flex gap-3 text-text-main">
+              <svg class="text-success w-5 h-5 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Optimización SEO On-Page
+            </li>
+            <li class="flex gap-3 text-text-main">
+              <svg class="text-success w-5 h-5 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Formulario de contacto
+            </li>
+          </ul>
+        </div>
+        
+        <SecondaryButton href="#" data-lemon-checkout="start-plan" class="w-full">Comenzar Start</SecondaryButton>
+      </Card>
+
+      <!-- Growth Plan -->
+      <Card hoverEffect class="reveal border-primary shadow-[0_12px_32px_rgba(37,99,235,0.1)] lg:-translate-y-4 flex flex-col h-full relative" style="transition-delay: 100ms;">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+          <Badge variant="primary" data-i18n-key="plans.growth.badge">Más elegido</Badge>
+        </div>
+        
+        <h3 class="text-2xl font-bold text-text-main mb-2" data-i18n-key="plans.growth.title">Ascend Growth</h3>
+        <p class="text-text-muted mb-6" data-i18n-key="plans.growth.desc">Para negocios que quieren escalar</p>
+        <div class="mb-8">
+          <span class="text-sm font-medium text-text-muted">Desde</span>
+          <div class="flex items-baseline gap-1 mt-1">
+            <span class="text-4xl font-bold text-text-main" data-base-price="1990">€1,990</span>
+          </div>
+        </div>
+        
+        <div class="flex-grow">
+          <ul class="space-y-4 mb-8">
+            <li class="flex gap-3 text-text-main font-medium">
+              <svg class="text-primary w-5 h-5 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Todo lo de Ascend Start
+            </li>
+            <li class="flex gap-3 text-text-main">
+              <svg class="text-primary w-5 h-5 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Sistema de reservas o E-commerce básico
+            </li>
+            <li class="flex gap-3 text-text-main">
+              <svg class="text-primary w-5 h-5 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Integración de WhatsApp Chatbot
+            </li>
+            <li class="flex gap-3 text-text-main">
+              <svg class="text-primary w-5 h-5 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Panel de administración (CMS)
+            </li>
+          </ul>
+        </div>
+        
+        <PrimaryButton href="#" data-lemon-checkout="growth-plan" class="w-full">Comenzar Growth</PrimaryButton>
+      </Card>
+
+      <!-- Pro Plan -->
+      <Card hoverEffect class="reveal flex flex-col h-full" style="transition-delay: 200ms;">
+        <h3 class="text-2xl font-bold text-text-main mb-2" data-i18n-key="plans.pro.title">Ascend Pro</h3>
+        <p class="text-text-muted mb-6" data-i18n-key="plans.pro.desc">Ecosistema digital completo</p>
+        <div class="mb-8">
+          <span class="text-sm font-medium text-text-muted">Desde</span>
+          <div class="flex items-baseline gap-1 mt-1">
+            <span class="text-4xl font-bold text-text-main" data-base-price="3990">€3,990</span>
+          </div>
+        </div>
+        
+        <div class="flex-grow">
+          <ul class="space-y-4 mb-8">
+            <li class="flex gap-3 text-text-main">
+              <svg class="text-success w-5 h-5 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Todo lo de Ascend Growth
+            </li>
+            <li class="flex gap-3 text-text-main">
+              <svg class="text-success w-5 h-5 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              SaaS a medida / Automatizaciones Zapier
+            </li>
+            <li class="flex gap-3 text-text-main">
+              <svg class="text-success w-5 h-5 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Portal de clientes propio
+            </li>
+            <li class="flex gap-3 text-text-main">
+              <svg class="text-success w-5 h-5 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Auditoría y soporte continuo (Ascend Care+)
+            </li>
+          </ul>
+        </div>
+        
+        <SecondaryButton href="#" data-lemon-checkout="pro-plan" class="w-full">Comenzar Pro</SecondaryButton>
+      </Card>
+
+    </div>
+  </div>
+</section>

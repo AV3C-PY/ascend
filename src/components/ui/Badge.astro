@@ -1,0 +1,26 @@
+---
+export interface Props {
+  variant?: 'primary' | 'outline' | 'success';
+  class?: string;
+  ['data-i18n-key']?: string;
+}
+
+const { variant = 'primary', class: className, 'data-i18n-key': i18nKey } = Astro.props;
+
+const variantStyles = {
+  primary: "bg-primary/10 text-primary border border-primary/20",
+  outline: "bg-bg-base text-text-main border border-border",
+  success: "bg-success/10 text-success border border-success/20"
+};
+---
+
+<span 
+  data-i18n-key={i18nKey}
+  class:list={[
+    "inline-flex items-center px-3 py-1 text-xs font-semibold rounded-full",
+    variantStyles[variant],
+    className
+  ]}
+>
+  <slot />
+</span>

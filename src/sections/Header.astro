@@ -1,0 +1,48 @@
+---
+import MarketSwitcher from '../components/MarketSwitcher.astro';
+import PrimaryButton from '../components/ui/PrimaryButton.astro';
+---
+
+<header id="main-header" class="fixed top-0 left-0 w-full h-[80px] z-[100] transition-all duration-300 ease-out border-b border-transparent">
+  <div class="max-w-[1280px] mx-auto h-full px-6 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2 group">
+      <div class="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center font-bold text-lg shadow-[0_2px_10px_rgba(37,99,235,0.3)] transition-transform group-hover:scale-105">A</div>
+      <span class="font-bold text-xl tracking-tight text-text-main">The Ascend<span class="text-primary">.</span></span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="/" class="text-sm font-medium text-text-muted hover:text-text-main transition-colors" data-i18n-key="nav.home">Inicio</a>
+      <a href="/soluciones" class="text-sm font-medium text-text-muted hover:text-text-main transition-colors" data-i18n-key="nav.solutions">Soluciones</a>
+      <a href="/planes" class="text-sm font-medium text-text-muted hover:text-text-main transition-colors" data-i18n-key="nav.plans">Planes</a>
+      <a href="/portfolio" class="text-sm font-medium text-text-muted hover:text-text-main transition-colors" data-i18n-key="nav.portfolio">Portfolio</a>
+      <a href="/#faq" class="text-sm font-medium text-text-muted hover:text-text-main transition-colors" data-i18n-key="nav.faq">FAQ</a>
+    </nav>
+
+    <!-- Actions -->
+    <div class="hidden md:flex items-center gap-4">
+      <MarketSwitcher />
+      <PrimaryButton href="/contacto" class="py-2 px-5 text-sm" data-i18n-key="nav.contact">Contacto</PrimaryButton>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="md:hidden text-text-main p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById('main-header');
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      header?.classList.add('bg-bg-base/80', 'backdrop-blur-md', 'shadow-[0_4px_24px_rgba(0,0,0,0.02)]', 'border-border/50');
+      header?.classList.remove('border-transparent');
+    } else {
+      header?.classList.remove('bg-bg-base/80', 'backdrop-blur-md', 'shadow-[0_4px_24px_rgba(0,0,0,0.02)]', 'border-border/50');
+      header?.classList.add('border-transparent');
+    }
+  });
+</script>

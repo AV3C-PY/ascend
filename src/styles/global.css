@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@theme {
+  --color-primary: var(--color-primary-val);
+  --color-bg-base: var(--color-bg-base-val);
+  --color-bg-sec: var(--color-bg-sec-val);
+  --color-text-main: var(--color-text-main-val);
+  --color-text-muted: var(--color-text-muted-val);
+  --color-border: var(--color-border-val);
+  --color-success: var(--color-success-val);
+  --color-error: var(--color-error-val);
+
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  :root {
+    --color-primary-val: #2563EB;
+    --color-bg-base-val: #FFFFFF;
+    --color-bg-sec-val: #F8FAFC;
+    --color-text-main-val: #111827;
+    --color-text-muted-val: #6B7280;
+    --color-border-val: #E5E7EB;
+    --color-success-val: #10B981;
+    --color-error-val: #EF4444;
+
+    /* Semantic aliases based on root requirements */
+    --color-primary: var(--color-primary-val);
+    --color-bg-base: var(--color-bg-base-val);
+    --color-bg-sec: var(--color-bg-sec-val);
+    --color-text-main: var(--color-text-main-val);
+    --color-text-muted: var(--color-text-muted-val);
+    --color-border: var(--color-border-val);
+    --color-success: var(--color-success-val);
+    --color-error: var(--color-error-val);
+  }
+  
+  body {
+    background-color: var(--color-bg-base);
+    color: var(--color-text-main);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 300ms ease-out, transform 300ms ease-out;
+  }
+  
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      transition: none !important;
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+  }
+}

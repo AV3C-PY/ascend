@@ -1,0 +1,81 @@
+---
+import Card from '../components/ui/Card.astro';
+---
+
+<section id="soluciones" class="py-24 md:py-32 bg-bg-base">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="max-w-[800px] mx-auto text-center mb-20 reveal">
+      <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-text-main mb-6" data-i18n-key="solutions.title">
+        Nuestro enfoque
+      </h2>
+      <p class="text-xl text-text-muted">No vendemos webs. Construimos sistemas digitales que trabajan por ti las 24 horas del día.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8">
+      
+      <!-- Card 1 -->
+      <Card hoverEffect class="p-8 md:p-12 reveal">
+        <div class="w-16 h-16 bg-primary/10 text-primary rounded-[16px] flex items-center justify-center mb-8">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>
+        </div>
+        <h3 class="text-2xl font-bold text-text-main mb-4">Diseño de Autoridad</h3>
+        <p class="text-text-muted leading-relaxed mb-6">
+          Tu primera impresión importa. Creamos identidades visuales e interfaces "Silicon Valley Premium" que inspiran confianza instantánea en tus clientes.
+        </p>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3 text-text-main">
+            <svg class="text-success w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Diseño minimalista y limpio
+          </li>
+          <li class="flex items-center gap-3 text-text-main">
+            <svg class="text-success w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Rendimiento extremo (Lighthouse 100)
+          </li>
+        </ul>
+      </Card>
+
+      <!-- Card 2 -->
+      <Card hoverEffect class="p-8 md:p-12 reveal" style="transition-delay: 100ms;">
+        <div class="w-16 h-16 bg-primary/10 text-primary rounded-[16px] flex items-center justify-center mb-8">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3 class="text-2xl font-bold text-text-main mb-4">Automatización</h3>
+        <p class="text-text-muted leading-relaxed mb-6">
+          Elimina cuellos de botella. Automatizamos tus reservas, presupuestos y respuestas de WhatsApp para que tú te enfoques en gestionar.
+        </p>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3 text-text-main">
+            <svg class="text-success w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Chatbots de WhatsApp
+          </li>
+          <li class="flex items-center gap-3 text-text-main">
+            <svg class="text-success w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Sistemas de reservas nativos
+          </li>
+        </ul>
+      </Card>
+
+      <!-- Card 3 -->
+      <Card hoverEffect class="p-8 md:p-12 reveal" style="transition-delay: 200ms;">
+        <div class="w-16 h-16 bg-primary/10 text-primary rounded-[16px] flex items-center justify-center mb-8">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3 class="text-2xl font-bold text-text-main mb-4">Crecimiento</h3>
+        <p class="text-text-muted leading-relaxed mb-6">
+          Haz que sea más fácil encontrarte. Optimizamos tu presencia para que Google te convierta en la opción preferida de tu zona.
+        </p>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3 text-text-main">
+            <svg class="text-success w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            SEO Local Avanzado
+          </li>
+          <li class="flex items-center gap-3 text-text-main">
+            <svg class="text-success w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Análisis y conversión
+          </li>
+        </ul>
+      </Card>
+
+    </div>
+  </div>
+</section>

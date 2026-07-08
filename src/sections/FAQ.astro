@@ -1,0 +1,39 @@
+---
+---
+
+<section id="faq" class="py-24 md:py-32 bg-bg-base border-t border-border/50">
+  <div class="max-w-[800px] mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-text-main mb-6">Preguntas Frecuentes</h2>
+      <p class="text-xl text-text-muted">Todo lo que necesitas saber antes de empezar.</p>
+    </div>
+
+    <div class="space-y-4">
+      {[
+        { q: "¿Cuánto tarda en estar lista mi web?", a: "Depende del plan. Ascend Start suele tomar 2 semanas, mientras que Growth o Pro toman de 3 a 5 semanas. El tiempo es importante, pero priorizamos que quede impecable." },
+        { q: "¿Tengo que pagar un mantenimiento mensual obligatorio?", a: "No. El código es tuyo y la web puede vivir en Cloudflare Pages gratis (o muy barato). Sin embargo, recomendamos Ascend Care para tranquilidad y copias de seguridad." },
+        { q: "¿Podré editar los textos o subir artículos yo mismo?", a: "Sí. En el plan Growth y Pro integramos un CMS (Gestor de contenidos) muy fácil de usar para que puedas actualizar tu blog, portfolio o servicios sin tocar código." },
+        { q: "¿Incluyen el dominio y el correo profesional?", a: "Te asesoramos y configuramos todo, pero los dominios (ej. tunombre.com) y el correo (ej. Google Workspace) se facturan a tu nombre para que tú seas siempre el dueño absoluto." }
+      ].map((faq, i) => (
+        <details class="group bg-bg-sec border border-border rounded-[16px] overflow-hidden reveal" style={`transition-delay: ${i * 100}ms;`}>
+          <summary class="flex items-center justify-between p-6 cursor-pointer text-lg font-bold text-text-main list-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset">
+            {faq.q}
+            <span class="transition-transform duration-300 group-open:rotate-180 text-text-muted">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="px-6 pb-6 text-text-muted leading-relaxed">
+            <p>{faq.a}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Ocultar la flecha por defecto del details en Safari/Chrome */
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

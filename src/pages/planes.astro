@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../sections/Header.astro';
+import Footer from '../sections/Footer.astro';
+import Pricing from '../sections/Pricing.astro';
+import FAQ from '../sections/FAQ.astro';
+---
+
+<BaseLayout title="Planes y Precios" description="Compara los planes de digitalización de The Ascend OS.">
+  <Header />
+
+  <main class="pt-20">
+    <Pricing />
+    
+    <section class="py-24 bg-bg-base border-t border-border">
+      <div class="max-w-[1000px] mx-auto px-6">
+        <h2 class="text-3xl font-bold tracking-tight text-text-main mb-12 text-center">Comparativa detallada</h2>
+        
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="border-b border-border">
+                <th class="py-4 px-4 font-medium text-text-muted w-1/3">Características</th>
+                <th class="py-4 px-4 font-bold text-text-main text-center">Start</th>
+                <th class="py-4 px-4 font-bold text-primary text-center">Growth</th>
+                <th class="py-4 px-4 font-bold text-text-main text-center">Pro</th>
+              </tr>
+            </thead>
+            <tbody class="text-text-main divide-y divide-border/50">
+              <tr>
+                <td class="py-4 px-4">Páginas incluidas</td>
+                <td class="py-4 px-4 text-center">Hasta 5</td>
+                <td class="py-4 px-4 text-center">Hasta 15</td>
+                <td class="py-4 px-4 text-center">Ilimitadas</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-4">Diseño a medida (UI/UX)</td>
+                <td class="py-4 px-4 text-center"><svg class="inline text-success w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td class="py-4 px-4 text-center"><svg class="inline text-success w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td class="py-4 px-4 text-center"><svg class="inline text-success w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              </tr>
+              <tr>
+                <td class="py-4 px-4">Gestor de Contenidos (CMS)</td>
+                <td class="py-4 px-4 text-center text-text-muted">-</td>
+                <td class="py-4 px-4 text-center"><svg class="inline text-success w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td class="py-4 px-4 text-center"><svg class="inline text-success w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              </tr>
+              <tr>
+                <td class="py-4 px-4">Sistema de Reservas / E-commerce</td>
+                <td class="py-4 px-4 text-center text-text-muted">-</td>
+                <td class="py-4 px-4 text-center">Básico</td>
+                <td class="py-4 px-4 text-center">Avanzado</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-4">Automatización WhatsApp</td>
+                <td class="py-4 px-4 text-center text-text-muted">-</td>
+                <td class="py-4 px-4 text-center"><svg class="inline text-success w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                <td class="py-4 px-4 text-center"><svg class="inline text-success w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              </tr>
+              <tr>
+                <td class="py-4 px-4">Portal de clientes (Dashboard)</td>
+                <td class="py-4 px-4 text-center text-text-muted">-</td>
+                <td class="py-4 px-4 text-center text-text-muted">-</td>
+                <td class="py-4 px-4 text-center"><svg class="inline text-success w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <FAQ />
+  </main>
+
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../sections/Header.astro';
+import Footer from '../../sections/Footer.astro';
+import PortfolioSection from '../../sections/Portfolio.astro';
+---
+
+<BaseLayout title="Portfolio" description="Nuestros trabajos recientes y casos de éxito.">
+  <Header />
+
+  <main class="pt-32 pb-24 bg-bg-base">
+    <div class="max-w-[1280px] mx-auto px-6 mb-16 text-center reveal">
+      <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-text-main mb-6">Nuestro trabajo.</h1>
+      <p class="text-xl text-text-muted leading-relaxed max-w-[800px] mx-auto mb-12">
+        Hemos ayudado a decenas de negocios a digitalizarse y escalar de forma elegante. Explora nuestros casos de éxito.
+      </p>
+      
+      <!-- Filtros (Visual para esta versión base, en futuro interactivo) -->
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <button class="px-5 py-2 rounded-full bg-primary text-white text-sm font-medium transition-colors">Todos</button>
+        <button class="px-5 py-2 rounded-full bg-bg-sec border border-border text-text-main hover:bg-[#F3F4F6] text-sm font-medium transition-colors">Web</button>
+        <button class="px-5 py-2 rounded-full bg-bg-sec border border-border text-text-main hover:bg-[#F3F4F6] text-sm font-medium transition-colors">E-commerce</button>
+        <button class="px-5 py-2 rounded-full bg-bg-sec border border-border text-text-main hover:bg-[#F3F4F6] text-sm font-medium transition-colors">Sistemas</button>
+      </div>
+    </div>
+    
+    <!-- Reuse Portfolio component but without title -->
+    <PortfolioSection />
+  </main>
+
+  <Footer />
+</BaseLayout>

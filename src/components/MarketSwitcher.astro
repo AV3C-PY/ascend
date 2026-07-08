@@ -1,0 +1,98 @@
+---
+import { MARKETS } from '../lib/store';
+
+const markets = Object.values(MARKETS);
+---
+
+<div class="relative inline-block text-left" id="market-switcher-container">
+  <button 
+    type="button" 
+    id="market-switcher-btn"
+    class="inline-flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium text-text-main bg-bg-base border border-border rounded-[14px] hover:bg-bg-sec transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1"
+  >
+    <span id="market-switcher-current-flag">🇪🇸</span>
+    <span id="market-switcher-current-code">ES</span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-text-muted"><path d="m6 9 6 6 6-6"/></svg>
+  </button>
+
+  <div 
+    id="market-switcher-menu" 
+    class="absolute right-0 z-50 mt-2 w-40 origin-top-right rounded-[16px] bg-bg-base shadow-[0_12px_24px_rgba(0,0,0,0.08)] border border-border opacity-0 invisible translate-y-2 transition-all duration-250 ease-out"
+  >
+    <div class="py-1" role="menu">
+      {markets.map(m => (
+        <button
+          type="button"
+          class="market-option flex w-full items-center gap-3 px-4 py-2.5 text-sm text-text-main hover:bg-bg-sec transition-colors"
+          data-market-code={m.code}
+          role="menuitem"
+        >
+          <span class="text-base">{m.code === 'fr' ? '🇫🇷' : m.code === 'es' ? '🇪🇸' : '🇵🇪'}</span>
+          <span>{m.name}</span>
+        </button>
+      ))}
+    </div>
+  </div>
+</div>
+
+<script>
+  import { currentMarketCode } from '../lib/store';
+
+  const container = document.getElementById('market-switcher-container');
+  const btn = document.getElementById('market-switcher-btn');
+  const menu = document.getElementById('market-switcher-menu');
+  const currentFlag = document.getElementById('market-switcher-current-flag');
+  const currentCode = document.getElementById('market-switcher-current-code');
+  const options = document.querySelectorAll('.market-option');
+
+  let isOpen = false;
+
+  function toggleMenu() {
+    isOpen = !isOpen;
+    if (isOpen) {
+      menu?.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+      menu?.classList.add('opacity-100', 'visible', 'translate-y-0');
+    } else {
+      menu?.classList.remove('opacity-100', 'visible', 'translate-y-0');
+      menu?.classList.add('opacity-0', 'invisible', 'translate-y-2');
+    }
+  }
+
+  btn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
+  });
+
+  document.addEventListener('click', (e) => {
+    if (isOpen && container && !container.contains(e.target as Node)) {
+      toggleMenu();
+    }
+  });
+
+  // Handle selection
+  options.forEach(opt => {
+    opt.addEventListener('click', (e) => {
+      const code = (e.currentTarget as HTMLElement).dataset.marketCode as any;
+      if (code) {
+        currentMarketCode.set(code);
+        toggleMenu();
+      }
+    });
+  });
+
+  // Subscribe to store to update UI of the button itself
+  currentMarketCode.subscribe(code => {
+    if (currentCode) currentCode.textContent = code.toUpperCase();
+    if (currentFlag) {
+      currentFlag.textContent = code === 'fr' ? '🇫🇷' : code === 'es' ? '🇪🇸' : '🇵🇪';
+    }
+    // Also save to localStorage for persistence
+    localStorage.setItem('ascend_market', code);
+  });
+
+  // Init from localStorage if available
+  const saved = localStorage.getItem('ascend_market');
+  if (saved && ['fr', 'es', 'pe'].includes(saved)) {
+    currentMarketCode.set(saved as any);
+  }
+</script>

@@ -1,0 +1,64 @@
+---
+import Card from '../components/ui/Card.astro';
+---
+
+<section class="py-24 md:py-32 bg-bg-base border-t border-border/50">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      
+      <div class="reveal">
+        <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-text-main mb-6">Por qué The Ascend OS</h2>
+        <p class="text-xl text-text-muted mb-8">No somos una agencia web tradicional. Somos tus socios tecnológicos diseñados para hacer que tu negocio se vea y funcione mejor.</p>
+        
+        <ul class="space-y-6">
+          <li class="flex gap-4">
+            <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold text-text-main mb-1">Tecnología de última generación</h4>
+              <p class="text-text-muted">Usamos el mismo stack tecnológico que las empresas más grandes del mundo. Cero plugins lentos, 100% código a medida.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold text-text-main mb-1">Pensado para negocios reales</h4>
+              <p class="text-text-muted">No hablamos con jerga técnica. Nos centramos en lo que te importa: conseguir más clientes y ahorrar tiempo.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold text-text-main mb-1">Sin ataduras ni permanencias</h4>
+              <p class="text-text-muted">El código es tuyo. No te secuestramos con pagos mensuales obligatorios para mantener tu web viva.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="relative reveal" style="transition-delay: 200ms;">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent pointer-events-none"></div>
+        <Card class="p-8 border-primary/20 shadow-[0_24px_64px_rgba(37,99,235,0.08)] bg-white/50 backdrop-blur-xl">
+          <div class="flex items-center gap-4 mb-8 pb-8 border-b border-border">
+            <div class="w-16 h-16 rounded-full bg-gray-200 overflow-hidden">
+               <!-- Avatar placeholder -->
+            </div>
+            <div>
+              <h4 class="text-lg font-bold text-text-main">David P.</h4>
+              <p class="text-sm text-text-muted">CEO, The Ascend OS</p>
+            </div>
+          </div>
+          <p class="text-lg text-text-main font-medium italic leading-relaxed">
+            "Creé The Ascend porque estaba cansado de ver cómo a los pequeños negocios se les vendían webs lentas y obsoletas a precios desorbitados. Mereces la misma tecnología que usan en Silicon Valley, pero simplificada."
+          </p>
+        </Card>
+      </div>
+
+    </div>
+  </div>
+</section>

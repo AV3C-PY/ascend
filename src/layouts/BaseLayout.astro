@@ -1,0 +1,141 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const { 
+  title, 
+  description = "Soluciones tecnológicas elegantes, rápidas y diseñadas para aumentar tus ventas sin complicaciones.", 
+  image = "/og-image.jpg" 
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://theascend.os');
+---
+
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | The Ascend OS</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Hreflang for SEO Market Support -->
+    <link rel="alternate" hreflang="es-ES" href="https://theascend.os/es/" />
+    <link rel="alternate" hreflang="es-PE" href="https://theascend.os/pe/" />
+    <link rel="alternate" hreflang="fr-FR" href="https://theascend.os/fr/" />
+    <link rel="alternate" hreflang="x-default" href="https://theascend.os/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+    
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Lemon Squeezy integration for Checkout Overlays -->
+    <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
+  </head>
+  <body class="antialiased min-h-screen flex flex-col">
+    <slot />
+    
+    <script>
+      // The Market Engine - Vanilla JS Subscription for instant i18n & currency changes
+      import { currentMarketCode, currentMarket, formatPrice } from '../lib/store';
+      import { dictionaries, type DictKey } from '../i18n/ui';
+
+      // Re-run Lemon Squeezy initialization if needed
+      declare global {
+        interface Window { createLemonSqueezy: () => void; }
+      }
+
+      currentMarketCode.subscribe((code) => {
+        const dict = dictionaries[code];
+        const marketInfo = currentMarket.get();
+        
+        // 1. Update text content for i18n keys
+        document.querySelectorAll('[data-i18n-key]').forEach(el => {
+          const key = (el as HTMLElement).dataset.i18nKey as DictKey;
+          if (dict[key]) {
+            el.textContent = dict[key];
+          }
+        });
+
+        // 2. Update placeholders
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+          const key = (el as HTMLElement).dataset.i18nPlaceholder as DictKey;
+          if (dict[key]) {
+            (el as HTMLInputElement).placeholder = dict[key];
+          }
+        });
+
+        // 3. Update Pricing
+        document.querySelectorAll('[data-base-price]').forEach(el => {
+          const basePrice = parseInt((el as HTMLElement).dataset.basePrice || '0', 10);
+          if (!isNaN(basePrice)) {
+            // Very simple currency logic for demo. 
+            // In reality, PEN might be a completely different numeric value based on PPP (Purchasing Power Parity)
+            // For now, let's assume 1 EUR = 4 PEN as a placeholder conversion.
+            let localizedPrice = basePrice;
+            if (marketInfo.currency === 'PEN') {
+               localizedPrice = basePrice * 4;
+            }
+            el.textContent = formatPrice(localizedPrice, marketInfo);
+          }
+        });
+
+        // 4. Update Lemon Squeezy checkout links
+        document.querySelectorAll('[data-lemon-checkout]').forEach(el => {
+          const productId = (el as HTMLElement).dataset.lemonCheckout;
+          if (productId) {
+            // E.g. construct the correct URL based on market's store prefix
+            const url = `${marketInfo.lemonSqueezyUrlPrefix}/${productId}`;
+            (el as HTMLAnchorElement).href = url;
+          }
+        });
+
+        // 5. Update HTML lang tag
+        document.documentElement.lang = code;
+
+        // Re-init lemon squeezy if available so new links get the overlay click handler
+        if (typeof window.createLemonSqueezy === 'function') {
+          window.createLemonSqueezy();
+        }
+      });
+      
+      // Setup Scroll Reveal Intersection Observer
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.reveal').forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../sections/Header.astro';
+import Hero from '../sections/Hero.astro';
+import Problems from '../sections/Problems.astro';
+import Solutions from '../sections/Solutions.astro';
+import Pricing from '../sections/Pricing.astro';
+import ServicesGrid from '../sections/ServicesGrid.astro';
+import Process from '../sections/Process.astro';
+import Portfolio from '../sections/Portfolio.astro';
+import WhyUs from '../sections/WhyUs.astro';
+import AscendCare from '../sections/AscendCare.astro';
+import FAQ from '../sections/FAQ.astro';
+import CTA from '../sections/CTA.astro';
+import Footer from '../sections/Footer.astro';
+---
+
+<BaseLayout 
+  title="Inicio" 
+  description="Digitalizamos pequeños negocios para que crezcan. Soluciones tecnológicas elegantes y rápidas."
+>
+  <Header />
+  
+  <main>
+    <Hero />
+    <Problems />
+    <Solutions />
+    <Pricing />
+    <ServicesGrid />
+    <Process />
+    <Portfolio />
+    <WhyUs />
+    <AscendCare />
+    <FAQ />
+    <CTA />
+  </main>
+
+  <Footer />
+</BaseLayout>

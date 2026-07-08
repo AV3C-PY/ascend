@@ -1,0 +1,53 @@
+---
+export interface Props {
+  type?: 'text' | 'email' | 'tel' | 'number' | 'url';
+  name: string;
+  id: string;
+  placeholder?: string;
+  required?: boolean;
+  class?: string;
+  textarea?: boolean;
+  rows?: number;
+}
+
+const { 
+  type = 'text', 
+  name, 
+  id, 
+  placeholder, 
+  required = false, 
+  class: className,
+  textarea = false,
+  rows = 4
+} = Astro.props;
+
+const baseStyles = [
+  "w-full px-4 py-3",
+  "bg-bg-base text-text-main",
+  "border border-border rounded-[16px]",
+  "transition-all duration-300 ease-out",
+  "placeholder:text-text-muted",
+  "focus-visible:outline-none focus-visible:border-primary focus-visible:ring-1 focus-visible:ring-primary focus-visible:shadow-[0_2px_10px_rgba(37,99,235,0.1)]",
+  "hover:border-text-muted/30"
+];
+---
+
+{textarea ? (
+  <textarea
+    name={name}
+    id={id}
+    placeholder={placeholder}
+    required={required}
+    rows={rows}
+    class:list={[...baseStyles, "resize-y", className]}
+  ></textarea>
+) : (
+  <input
+    type={type}
+    name={name}
+    id={id}
+    placeholder={placeholder}
+    required={required}
+    class:list={[...baseStyles, className]}
+  />
+)}
